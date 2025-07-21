@@ -694,7 +694,7 @@ class oembed {
         $bothperc = strpos($height, '%') !== false && strpos($width, '%') !== false;
         $neitherperc = strpos($height, '%') === false && strpos($width, '%') === false;
         // If both height and width use percentages or both don't then we can calculate an aspect ratio.
-        if ($bothperc || $neitherperc) {
+        if (($bothperc || $neitherperc) && $width > 0) {
             // Calculate aspect ratio.
             $aspectratio = intval($height) / intval($width);
         } else {
